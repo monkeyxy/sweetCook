@@ -10,6 +10,6 @@ export const environment = {
 const API_PREFIX = '/app-api/user';
 
 export const apis = {
-  register: () => `${API_PREFIX}/register`, // 注册接口
-  getUserInfo: ()=> `${API_PREFIX}/info`, // 获取用户信息
+  login: () => `${API_PREFIX}/register`, // 注册接口
+  
 };

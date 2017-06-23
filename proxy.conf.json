@@ -1,0 +1,7 @@
+{
+  "/app-api": {
+      "target":"http://sweetcook.xy-kaka.cn/",
+      "secure": false,
+      "changeOrigin": true
+  }
+}
