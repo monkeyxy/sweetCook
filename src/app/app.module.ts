@@ -7,6 +7,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 
+import { TabsModule } from 'ngx-bootstrap';
+
 import {SERVICES} from './services';
 
 @NgModule({
@@ -17,7 +19,8 @@ import {SERVICES} from './services';
   imports: [
     RouterModule.forRoot(appRoutes, {useHash: true}),
     BrowserModule,
-    HttpModule
+    HttpModule,
+    TabsModule.forRoot(),
   ],
   providers: [SERVICES],
   bootstrap: [AppComponent]
