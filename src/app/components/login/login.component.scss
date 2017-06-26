@@ -1,6 +1,37 @@
 .mainContainer{
    margin-top:40%;
-   .pageChange{
-       
+    .top{
+        width:50%;
+        margin:auto;
+        .pageChange{
+            overflow: auto;
+            li{
+                float:left;
+                width:50%;
+                text-align: center;
+            }
+            .loginItem{
+
+            }
+            .regItem{
+
+            }
+            .active{
+                color:#ff7600;
+                border-bottom: 1px solid #ff7600;
+            }
+        }
     }
+    .main{
+        width: 80%;
+        border: 1px solid #ddd;
+        margin: auto;
+    }
+    .loginMain{
+        
+    }
+    .regMain{
+
+    }
+   
 }

@@ -8,12 +8,13 @@ import { TabsetComponent } from 'ngx-bootstrap';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  public showLogin :boolean;
   constructor(
     public userService:UserService,
   ) { }
 
   ngOnInit() {
+    this.showLogin = true;
   }
   register(){
     console.log('====')
@@ -23,6 +24,13 @@ export class LoginComponent implements OnInit {
     },error =>{
       console.log(error);
     })
+  }
+  selectItem(type){//type ==1 login   || type ==2 register
+    if(type == 1){
+      this.showLogin = true;
+    }else{
+      this.showLogin = false;
+    } 
   }
 
 }

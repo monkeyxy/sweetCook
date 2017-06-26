@@ -1,9 +1,17 @@
 
 <div class="mainContainer">
-  <ul class="pageChange">
-    <li>登录</li>
-    <li>注册</li>
-  </ul>
+  <div class="top">
+    <ul class="pageChange">
+      <li class="loginItem" [ngClass]="{'active':showLogin}" (click)="selectItem(1)">登录</li>
+      <li class="regItem" [ngClass]="{'active':!showLogin}" (click)="selectItem(2)">注册</li>
+    </ul>
+  </div>
+  <div class="loginMain main" *ngIf="showLogin">
+    1111
+  </div>
+  <div class="regMain main" *ngIf="!showLogin">
+    222
+  </div>
 </div>
 
 <button (click)='register()'>test register</button>
