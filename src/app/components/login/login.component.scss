@@ -48,6 +48,20 @@
     .regMain{
 
     }
+    .bottomBtn{
+        margin-top: 4rem;
+        text-align: center;
+        span{
+            display: inline-block;
+            width: 3.5rem;
+            height: 3rem;
+            background-size: cover;
+            background-image: url('/assets/login/beforeLogin.png');
+        }
+        .ok{
+
+        }
+    }
    
 }
 
