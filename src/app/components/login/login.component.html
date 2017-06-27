@@ -2,15 +2,25 @@
 <div class="mainContainer">
   <div class="top">
     <ul class="pageChange">
-      <li class="loginItem" [ngClass]="{'active':showLogin}" (click)="selectItem(1)">登录</li>
-      <li class="regItem" [ngClass]="{'active':!showLogin}" (click)="selectItem(2)">注册</li>
+      <li class="loginItem" (click)="selectItem(1)"><span [ngClass]="{'active':showLogin}">登录</span></li>
+      <li class="regItem" (click)="selectItem(2)"><span [ngClass]="{'active':!showLogin}">注册</span></li>
     </ul>
   </div>
   <div class="loginMain main" *ngIf="showLogin">
-    1111
+    <div class="inputShadow">
+      <input type="text" placeholder="请输入用户名">
+    </div>
+    <div class="inputShadow">
+      <input type="text" placeholder="请输入密码">
+    </div>
   </div>
   <div class="regMain main" *ngIf="!showLogin">
-    222
+    <div class="inputShadow">
+      <input type="text" placeholder="想一个流弊的用户名吧">
+    </div>
+    <div class="inputShadow">
+      <input type="text" placeholder="密码要记好啊">
+    </div>
   </div>
 </div>
 

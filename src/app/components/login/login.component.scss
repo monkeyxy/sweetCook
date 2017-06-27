@@ -2,12 +2,13 @@
    margin-top:40%;
     .top{
         width:50%;
-        margin:auto;
+        margin: 2rem auto;
         .pageChange{
             overflow: auto;
+            display: flex;
             li{
+                flex:1;
                 float:left;
-                width:50%;
                 text-align: center;
             }
             .loginItem{
@@ -18,14 +19,28 @@
             }
             .active{
                 color:#ff7600;
-                border-bottom: 1px solid #ff7600;
+                border-bottom: 2px solid #ff7600;
+                width: 4rem;
+                height: 2.5rem;
+                display: inline-block;
             }
         }
     }
     .main{
         width: 80%;
-        border: 1px solid #ddd;
         margin: auto;
+        .inputShadow{
+            margin: 1rem;
+            padding: 1rem;
+            border-radius: 2rem;
+            box-shadow: 1px 1px 8px #ddd;
+            input{
+                width: 100%;
+            }
+            ::-webkit-input-placeholder{
+                color:#ddd;
+            }
+        }
     }
     .loginMain{
         
@@ -35,3 +50,4 @@
     }
    
 }
+

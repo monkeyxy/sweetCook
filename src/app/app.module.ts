@@ -20,6 +20,7 @@ import {SERVICES} from './services';
     RouterModule.forRoot(appRoutes, {useHash: true}),
     BrowserModule,
     HttpModule,
+    
     TabsModule.forRoot(),
   ],
   providers: [SERVICES],
