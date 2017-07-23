@@ -2,7 +2,6 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { TabsetComponent } from 'ngx-bootstrap';
 import { BsModalService } from 'ngx-bootstrap/modal';
-import { ModalBackdropComponent } from 'ngx-bootstrap';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
 @Component({
@@ -12,7 +11,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 })
 export class MineComponent implements OnInit {
   public bindCouple: string = 'xy';
-  public showBindCouple : boolean = false;
+  public showBindCouple : boolean = true;
   public modalRef: BsModalRef;
 
   constructor(
@@ -24,6 +23,7 @@ export class MineComponent implements OnInit {
 
   }
   logout(template: TemplateRef<any>) {
+    console.log(template);
     this.modalRef = this.modalService.show(template);
   }
 }

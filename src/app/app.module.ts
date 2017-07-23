@@ -5,8 +5,10 @@ import { appRoutes } from './route.module';
 import { HttpModule } from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import { ComponentLoaderFactory } from 'ngx-bootstrap/component-loader';
-import { PositioningService, ModalBackdropComponent } from 'ngx-bootstrap';
+import { PositioningService } from 'ngx-bootstrap';
+
 import { BsModalService } from 'ngx-bootstrap/modal';
+import { ModalModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -29,11 +31,11 @@ import {SERVICES} from './services';
     FormsModule,
 
     TabsModule.forRoot(),
+    ModalModule.forRoot(),
   ],
   providers: [SERVICES,
     ComponentLoaderFactory,
     PositioningService,
-    ModalBackdropComponent,
     BsModalService],
   bootstrap: [AppComponent]
 })
