@@ -42,26 +42,24 @@
             }
         }
     }
-    .loginMain{
-        
-    }
-    .regMain{
-
-    }
-    .bottomBtn{
-        margin-top: 4rem;
-        text-align: center;
-        span{
-            display: inline-block;
-            width: 3.5rem;
-            height: 3rem;
-            background-size: cover;
-            background-image: url('/assets/login/beforeLogin.png');
-        }
-        .ok{
-
-        }
-    }
-   
+  .divPadding{
+    padding-bottom: 1rem;
+  }
+  .bindButton {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+    color: black;
+    background: greenyellow;
+  }
+   .logoutButton {
+     display: flex;
+     justify-content: center;
+     width: 100%;
+     height: 3rem;
+     color: white;
+     background: red;
+   }
 }
 

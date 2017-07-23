@@ -8,12 +8,16 @@ import { TabsetComponent } from 'ngx-bootstrap';
   styleUrls: ['./mine.component.scss']
 })
 export class MineComponent implements OnInit {
-  public singleModel: string = '1';
+  public bindCouple: string = 'xy';
+  public showBindCouple : boolean = false;
   constructor(
     public userService:UserService,
   ) { }
 
   ngOnInit() {
 
+  }
+  logout() {
+    alert("ddf");
   }
 }
