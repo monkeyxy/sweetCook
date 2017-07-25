@@ -7,9 +7,12 @@ export const environment = {
   production: false
 };
 
-const API_PREFIX = '/app-api/user';
+const USER_PREFIX = '/app-api/user';
+
 
 export const apis = {
-  register: () => `${API_PREFIX}/register`, // 注册接口
-  getUserInfo: ()=> `${API_PREFIX}/info`, // 获取用户信息
+  register: () => `${USER_PREFIX}/register`, // 注册接口
+  getUserInfo: () => `${USER_PREFIX}/info`, // 获取用户信息
+  bindCouple: () => `${USER_PREFIX}/bind`, //绑定情侣
+  logout: () => `${USER_PREFIX}/logout`, //退出登录
 };

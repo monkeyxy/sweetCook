@@ -62,4 +62,12 @@
      background: red;
    }
 }
-
+.inputShadow {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  box-shadow: 1px 1px 8px #ddd;
+  input {
+    width: 100%;
+  }
+}

@@ -27,8 +27,17 @@ export class MineComponent implements OnInit {
   }
   logout(template: TemplateRef<any>) {
     console.log(template);
-    this.msgHint = '登出成功!';
-    this.hintModalRef = this.modalService.show(template);
+    this.userService.logout().subscribe((result: any ) => {
+      if(result.retcode != 0){
+        this.msgHint = '登出失败!提示：'+ result.msg;
+        this.hintModalRef = this.modalService.show(template);
+        return;
+      }
+      this.msgHint = '登出成功!';
+      this.hintModalRef = this.modalService.show(template);
+    },error =>{
+      console.log(error);
+    });
   }
 
   bindCouple(template: TemplateRef<any>) {
@@ -43,8 +52,20 @@ export class MineComponent implements OnInit {
       this.hintModalRef = this.modalService.show(template);
       return
     }
-    this.bindedCouple = this.selectedCouple;
-    this.showBindCouple = true;
     this.modalRef.hide();
+    this.userService.bindCouple(this.selectedCouple).subscribe((result: any ) => {
+      console.log(result);
+
+      if(result.retcode != 0){
+        this.msgHint = '绑定失败!提示：'+ result.msg;
+        this.selectedCouple = '';
+        this.hintModalRef = this.modalService.show(template);
+        return;
+      }
+      this.bindedCouple = this.selectedCouple;
+      this.showBindCouple = true;
+    },error =>{
+      console.log(error);
+    });
   }
 }
