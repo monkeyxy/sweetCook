@@ -29,21 +29,21 @@
     .main{
         width: 80%;
         margin: auto;
-        .inputShadow{
-            margin: 1rem;
-            padding: 1rem;
-            border-radius: 2rem;
-            box-shadow: 1px 1px 8px #ddd;
-            input{
-                width: 100%;
-            }
-            ::-webkit-input-placeholder{
-                color:#ddd;
-            }
-        }
     }
   .divPadding{
     padding-bottom: 1rem;
+  }
+  .inputShadow{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    box-shadow: 1px 1px 8px #ddd;
+    input{
+      width: 100%;
+    }
+    ::-webkit-input-placeholder{
+      color:#ddd;
+    }
   }
   .bindButton {
     display: flex;

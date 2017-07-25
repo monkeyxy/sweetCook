@@ -4,23 +4,23 @@
   </div>
   <div class="loginMain main">
     <div  *ngIf="showBindCouple">
-      <pre class="card card-block card-header">已绑定情侣：{{bindCouple}}</pre>
+      <pre class="card card-block card-header">已绑定情侣：{{bindedCouple}}</pre>
     </div>
     <div  *ngIf="!showBindCouple" class="divPadding">
       <button type="button" class="btn btn-primary bindButton"
-              [(ngModel)]="bindCouple" btnCheckbox
+              (click)="bindCouple(bindTemplate)" btnCheckbox
               ngDefaultControl>
         绑定情侣
       </button>
     </div>
     <div class="divPadding">
       <button type="button" class="btn btn-primary logoutButton"
-              (click)="logout(template)" btnCheckbox
+              (click)="logout(logoutTemplate)" btnCheckbox
               ngDefaultControl>
         注销登录
       </button>
 
-      <template #template>
+      <template #logoutTemplate>
         <div class="modal-header">
           <h4 class="modal-title pull-left">提示</h4>
           <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
@@ -28,10 +28,28 @@
           </button>
         </div>
         <div class="modal-body">
-          登出成功
+          {{msgHint}}
         </div>
       </template>
 
+      <template #bindTemplate>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">提示</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="inputShadow">
+            <input type="text" [(ngModel)]="selectedCouple" placeholder="请输入绑定情侣用户名">
+          </div>
+          <button type="button" class="btn btn-primary bindButton"
+                  (click)="sureBindCouple(logoutTemplate)" btnCheckbox
+                  ngDefaultControl>
+            绑定情侣
+          </button>
+        </div>
+      </template>
     </div>
   </div>
 </div>

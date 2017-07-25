@@ -10,9 +10,12 @@ import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
   styleUrls: ['./mine.component.scss']
 })
 export class MineComponent implements OnInit {
-  public bindCouple: string = 'xy';
-  public showBindCouple : boolean = true;
+  public bindedCouple: string = '';
+  public selectedCouple: string = '';
+  public showBindCouple : boolean = false;
+  public msgHint : string = '';
   public modalRef: BsModalRef;
+  public hintModalRef: BsModalRef;
 
   constructor(
     public userService:UserService,
@@ -24,6 +27,24 @@ export class MineComponent implements OnInit {
   }
   logout(template: TemplateRef<any>) {
     console.log(template);
+    this.msgHint = '登出成功!';
+    this.hintModalRef = this.modalService.show(template);
+  }
+
+  bindCouple(template: TemplateRef<any>) {
+    console.log(template);
     this.modalRef = this.modalService.show(template);
+  }
+
+  sureBindCouple(template: TemplateRef<any>) {
+    if (this.selectedCouple === '') {
+      this.msgHint = '请填写用户名!';
+      this.modalRef.hide();
+      this.hintModalRef = this.modalService.show(template);
+      return
+    }
+    this.bindedCouple = this.selectedCouple;
+    this.showBindCouple = true;
+    this.modalRef.hide();
   }
 }
