@@ -5,7 +5,10 @@
       <img class="avatar-img" src="{{userInfo.avatar}}"/>
     </div>
     <div class="desc-div">
-      <span class="desc-span">{{userInfo.desc}}</span>
+      <span class="desc-span" *ngIf="isUserLogined">{{userInfo.desc}}</span>
+      <div *ngIf="!isUserLogined">
+        <span class="login-span"><a href="#/login">登录</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp; <a href="#/login">注册</a></span>
+      </div>
     </div>
   </div>
 </div>
@@ -13,12 +16,12 @@
   <div class="top">
   </div>
   <div class="loginMain main">
-    <div  *ngIf="showBindCouple">
+    <div *ngIf="showBindCouple">
       <pre class="card card-block card-header">已绑定情侣：{{bindedCouple}}</pre>
     </div>
     <div  *ngIf="!showBindCouple" class="divPadding">
       <button type="button" class="btn btn-primary bindButton"
-              (click)="bindCouple(bindTemplate)" btnCheckbox
+              (click)="bindCouple(bindTemplate, logoutTemplate)" btnCheckbox
               ngDefaultControl>
         绑定情侣
       </button>

@@ -14,6 +14,7 @@ export class MineComponent implements OnInit {
   public bindedCouple: string = '';
   public selectedCouple: string = '';
   public showBindCouple : boolean = false;
+  public isUserLogined : boolean = false;
   public msgHint : string = '';
   public modalRef: BsModalRef;
   public hintModalRef: BsModalRef;
@@ -24,7 +25,7 @@ export class MineComponent implements OnInit {
     telephone: "",
     sex: 1,
     companion_id: "",
-    avatar: "",
+    avatar: "/assets/mine/default-cook.png",
     desc: ""
   };
 
@@ -35,10 +36,14 @@ export class MineComponent implements OnInit {
 
   ngOnInit() {
     this.userService.userInfo().subscribe((result: User ) => {
+      if(!result._id || result._id == ""){
+        return;
+      }
       console.log("user info: ", result);
       this.userInfo = result;
       this.bindedCouple = result.companion_id;
       this.showBindCouple = result.companion_id ? true: false;
+      this.isUserLogined = true;
     },error =>{
       console.log(error);
     });
@@ -58,8 +63,14 @@ export class MineComponent implements OnInit {
     });
   }
 
-  bindCouple(template: TemplateRef<any>) {
+  bindCouple(template: TemplateRef<any>, msgTemplate: TemplateRef<any>) {
     console.log(template);
+    if(this.isUserLogined == false){
+      //用户还没登录
+      this.msgHint = '您尚未登录，请先登录！';
+      this.hintModalRef = this.modalService.show(msgTemplate);
+      return;
+    }
     this.modalRef = this.modalService.show(template);
   }
 
