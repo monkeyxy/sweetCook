@@ -33,4 +33,9 @@ export class UserService {
     let url = `${apis.logout()}`;
     return this.http.get(url)
   }
+
+  userInfo() {
+    let url = `${apis.userInfo()}`;
+    return this.http.get(url)
+  }
 }

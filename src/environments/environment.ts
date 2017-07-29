@@ -15,5 +15,6 @@ export const apis = {
   getUserInfo: () => `${USER_PREFIX}/info`, // 获取用户信息
   bindCouple: () => `${USER_PREFIX}/bind`, //绑定情侣
   logout: () => `${USER_PREFIX}/logout`, //退出登录
-  login: () => `${USER_PREFIX}/login`, //退出登录
+  login: () => `${USER_PREFIX}/login`, //登录
+  userInfo: () => `${USER_PREFIX}/info`, //用户信息获取接口
 };

@@ -3,6 +3,7 @@ import { UserService } from '../../services/user.service';
 import { TabsetComponent } from 'ngx-bootstrap';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
+import { User } from '../../models/User';
 
 @Component({
   selector: 'app-mine',
@@ -16,6 +17,16 @@ export class MineComponent implements OnInit {
   public msgHint : string = '';
   public modalRef: BsModalRef;
   public hintModalRef: BsModalRef;
+  public userInfo: User = {
+    _id: "",
+    username: "",
+    nickname: "",
+    telephone: "",
+    sex: 1,
+    companion_id: "",
+    avatar: "",
+    desc: ""
+  };
 
   constructor(
     public userService:UserService,
@@ -23,7 +34,14 @@ export class MineComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+    this.userService.userInfo().subscribe((result: User ) => {
+      console.log("user info: ", result);
+      this.userInfo = result;
+      this.bindedCouple = result.companion_id;
+      this.showBindCouple = result.companion_id ? true: false;
+    },error =>{
+      console.log(error);
+    });
   }
   logout(template: TemplateRef<any>) {
     console.log(template);
