@@ -17,6 +17,13 @@ export class UserService {
     })
   }
 
+  login(params){
+    let url = `${apis.login()}`;
+    return this.http.post(url,{
+      body:params,
+    })
+  }
+
   bindCouple(username) {
     let url = `${apis.bindCouple()}`;
     return this.http.get(url + '?bind_username=' + username)
