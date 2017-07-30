@@ -34,8 +34,15 @@
             padding: 1rem;
             border-radius: 2rem;
             box-shadow: 1px 1px 8px #ddd;
+            span{
+                display: inline-block;
+                width:20%;
+                margin-right:5px;
+                text-align: right;
+                color:#999;
+            }
             input{
-                width: 100%;
+                width: 70%;
             }
             ::-webkit-input-placeholder{
                 color:#ddd;

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { TabsetComponent } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-login',
