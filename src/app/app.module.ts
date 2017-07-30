@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { MineComponent } from './components/mine/mine.component';
 import { MainComponent } from './components/main/main.component';
+import { CookbookComponent } from './components/cookbook/cookbook.component';
 
 import {SERVICES} from './services';
 
@@ -22,7 +23,8 @@ import {SERVICES} from './services';
     AppComponent,
     LoginComponent,
     MineComponent,
-    MainComponent
+    MainComponent,
+    CookbookComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {useHash: true}),
