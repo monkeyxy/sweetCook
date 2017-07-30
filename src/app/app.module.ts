@@ -8,13 +8,11 @@ import { ComponentLoaderFactory } from 'ngx-bootstrap/component-loader';
 import { PositioningService } from 'ngx-bootstrap';
 
 import { BsModalService } from 'ngx-bootstrap/modal';
-import { ModalModule } from 'ngx-bootstrap';
+import { ModalModule, AlertModule, TabsModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { MineComponent } from './components/mine/mine.component';
-
-import { TabsModule } from 'ngx-bootstrap';
 
 import {SERVICES} from './services';
 
@@ -32,6 +30,7 @@ import {SERVICES} from './services';
 
     TabsModule.forRoot(),
     ModalModule.forRoot(),
+    AlertModule.forRoot(),
   ],
   providers: [SERVICES,
     ComponentLoaderFactory,

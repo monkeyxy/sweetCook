@@ -19,14 +19,21 @@ export class MineComponent implements OnInit {
   public modalRef: BsModalRef;
   public hintModalRef: BsModalRef;
   public userInfo: User = {
-    _id: "",
-    username: "",
-    nickname: "",
-    telephone: "",
+    _id: '',
+    username: '',
+    nickname: '',
+    telephone: '',
     sex: 1,
-    companion_id: "",
-    avatar: "/assets/mine/default-cook.png",
-    desc: ""
+    companion_id: '',
+    avatar: '/assets/mine/default-cook.png',
+    desc: ''
+  };
+  public alertInfo : any = {
+    on: false,
+    info: '提示：',
+    msg: '',
+    dissmissTime: 0,
+    type: 'success'
   };
 
   constructor(
@@ -36,10 +43,10 @@ export class MineComponent implements OnInit {
 
   ngOnInit() {
     this.userService.userInfo().subscribe((result: User ) => {
-      if(!result._id || result._id == ""){
+      if(!result._id || result._id == ''){
         return;
       }
-      console.log("user info: ", result);
+      console.log('user info: ', result);
       this.userInfo = result;
       this.bindedCouple = result.companion_id;
       this.showBindCouple = result.companion_id ? true: false;
@@ -67,8 +74,10 @@ export class MineComponent implements OnInit {
     console.log(template);
     if(this.isUserLogined == false){
       //用户还没登录
-      this.msgHint = '您尚未登录，请先登录！';
-      this.hintModalRef = this.modalService.show(msgTemplate);
+      this.alertInfo.msg = '您尚未登录，请先登录！';
+      this.alertInfo.on = true;
+      this.alertInfo.type = 'danger';
+      this.alertInfo.dissmissTime = 0;
       return;
     }
     this.modalRef = this.modalService.show(template);
@@ -85,10 +94,12 @@ export class MineComponent implements OnInit {
     this.userService.bindCouple(this.selectedCouple).subscribe((result: any ) => {
       console.log(result);
 
-      if(result.retcode != 0){
-        this.msgHint = '绑定失败!提示：'+ result.msg;
+      if(result.retcode != 0) {
+        this.alertInfo.msg = '绑定失败!提示：' + result.msg;
+        this.alertInfo.on = true;
+        this.alertInfo.type = 'danger';
+        this.alertInfo.dissmissTime = 0;
         this.selectedCouple = '';
-        this.hintModalRef = this.modalService.show(template);
         return;
       }
       this.bindedCouple = this.selectedCouple;

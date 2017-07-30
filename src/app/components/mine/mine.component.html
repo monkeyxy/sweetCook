@@ -65,4 +65,6 @@
       </template>
     </div>
   </div>
+  <alert *ngIf="alertInfo.on" [type]="alertInfo.type" [dismissOnTimeout]="alertInfo.dissmissTime">
+    <strong>{{ alertInfo.info }}</strong>{{ alertInfo.msg }}</alert>
 </div>
