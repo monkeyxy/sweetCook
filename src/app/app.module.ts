@@ -13,6 +13,7 @@ import { ModalModule, AlertModule, TabsModule } from 'ngx-bootstrap';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { MineComponent } from './components/mine/mine.component';
+import { MainComponent } from './components/main/main.component';
 
 import {SERVICES} from './services';
 
@@ -20,7 +21,8 @@ import {SERVICES} from './services';
   declarations: [
     AppComponent,
     LoginComponent,
-    MineComponent
+    MineComponent,
+    MainComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {useHash: true}),
