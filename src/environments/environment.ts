@@ -8,7 +8,7 @@ export const environment = {
 };
 
 const USER_PREFIX = '/app-api/user';
-
+const COOKBOOK_PREFIX = '/app-api/cookbook';
 
 export const apis = {
   register: () => `${USER_PREFIX}/register`, // 注册接口
@@ -17,4 +17,6 @@ export const apis = {
   logout: () => `${USER_PREFIX}/logout`, //退出登录
   login: () => `${USER_PREFIX}/login`, //登录
   userInfo: () => `${USER_PREFIX}/info`, //用户信息获取接口
+
+  cookList: () => `${COOKBOOK_PREFIX}/list`,  //菜谱列表接口
 };

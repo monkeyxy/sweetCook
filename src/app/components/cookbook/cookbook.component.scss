@@ -6,9 +6,21 @@ ul {
   border-bottom: 1px solid #ddd;
   overflow: auto;
   li {
+    div {
+      padding-top: 0.5rem;
+    }
     float: left;
     width:25%;
     text-align: center;
-    height: 4rem;
+    height: 5rem;
+    p {
+      padding-top: 0.5rem;
+    }
   }
+}
+
+.cooktype-img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 4rem;
 }
